@@ -4,6 +4,12 @@ import joblib
 import sys
 
 def infer(data_path):
+    # Si se esta usando el weather_docker.csv que viene con el repo, las predicciones deberian ser:
+    #No
+    #Yes
+    #No
+    #Yes
+    #Yes
     try:
         data = pd.read_csv(data_path)
         print(f"Datos cargados desde {data_path}")
