@@ -1,22 +1,48 @@
-# Ciudades utilizadas:
 
-Wollongong
-Ballarat
-MountGinini
-Hobart
-Williamtown
-Adelaide
-Sale
-Penrith
-Woomera
-SalmonGums
+# Docker Setup
 
-# DOCKER
+## Ciudades utilizadas
 
-1. Ubicar la terminal en la carpeta "docker": Ejemplo en Windows 'cd C:\Users\Usuario\repos\AA1-TUIA-Bravi-Nemeth\docker'
-2. Crear imagen: docker build -t infer-image .
-3. Subir el archivo .csv a predecir en la carpeta "docker" con el nombre "weather_docker.csv"
-4. Correr el contenedor: docker run --rm -v $(pwd):/output infer-image (linux) o docker run --rm -v ${PWD}:/output infer-image (windows)
+- Wollongong
+- Ballarat
+- Mount Ginini
+- Hobart
+- Williamtown
+- Adelaide
+- Sale
+- Penrith
+- Woomera
+- Salmon Gums
 
+## Pasos para usar Docker
+
+1. **Ubicar la terminal en la carpeta "docker":**
    
-En la misma carpeta se va a generar el archivo predicciones.csv
+   En Windows:
+   ```bash
+   cd C:\Users\Usuario\repos\AA1-TUIA-Bravi-Nemeth\docker
+   ```
+
+2. **Crear la imagen Docker:**
+   Ejecuta el siguiente comando para crear la imagen `infer-image`:
+   ```bash
+   docker build -t infer-image .
+   ```
+
+3. **Subir el archivo `.csv` a predecir:**
+   
+   Coloca el archivo `weather_docker.csv` en la carpeta `docker`.
+
+4. **Correr el contenedor:**
+
+   En Linux:
+   ```bash
+   docker run --rm -v $(pwd):/output infer-image
+   ```
+
+   En Windows:
+   ```bash
+   docker run --rm -v ${PWD}:/output infer-image
+   ```
+
+   Esto generará el archivo `predicciones.csv` en la misma carpeta.
