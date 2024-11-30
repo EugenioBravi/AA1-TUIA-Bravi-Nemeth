@@ -13,7 +13,10 @@ SalmonGums
 
 # DOCKER
 
-1. Descargar imagen:
-2. Cargamos la imagen:
-3. Subimos el archivo .csv a predecir en la carpeta \_ con el nombre de weather_docker
-4. Poner en consola: python ./docker/inference.py
+1. Ubicar la terminal en la carpeta "docker": Ejemplo en Windows 'cd C:\Users\Usuario\repos\AA1-TUIA-Bravi-Nemeth\docker'
+2. Crear imagen: docker build -t infer-image .
+3. Subir el archivo .csv a predecir en la carpeta "docker" con el nombre "weather_docker.csv"
+4. Correr el contenedor: docker run --rm -v $(pwd):/output infer-image (linux) o docker run --rm -v ${PWD}:/output infer-image (windows)
+
+   
+En la misma carpeta se va a generar el archivo predicciones.csv
