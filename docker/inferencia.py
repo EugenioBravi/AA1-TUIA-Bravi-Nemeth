@@ -79,10 +79,10 @@ def infer(data_path):
         result = pd.DataFrame({'llueve': y_pred_nn.flatten()})
         result['llueve'] = result['llueve'].map({1: 'Yes', 0: 'No'})
 
-        result.to_csv("/output/predicciones.csv", index=False)
+        result.to_csv("./predicciones.csv", index=False)
         print("Predicciones guardadas en predicciones.csv")
     except Exception as e:
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    infer("/output/weather_docker.csv")
+    infer("./weather_docker.csv")
