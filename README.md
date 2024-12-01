@@ -39,13 +39,13 @@
    En Linux:
 
    ```bash
-   docker run --rm -v $(pwd):/ infer-image
+   docker run --rm -v $(pwd):/output infer-image
    ```
 
    En Windows:
 
    ```bash
-   docker run --rm -v ${PWD}:/ infer-image
+   docker run --rm -v ${PWD}:/output infer-image
    ```
 
    Esto generará el archivo `predicciones.csv` en la misma carpeta.
