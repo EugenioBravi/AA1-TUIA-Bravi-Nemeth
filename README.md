@@ -36,16 +36,8 @@
 
 4. **Correr el contenedor:**
 
-   En Linux:
-
    ```bash
-   docker run --rm -v $(pwd):/app infer-image
-   ```
-
-   En Windows:
-
-   ```bash
-   docker run --rm -v ${PWD}:/app infer-image
+   docker run --rm -v <ruta-especifica-de-la-carpeta-docker>:/app infer-image
    ```
 
    Esto generará el archivo `predicciones.csv` en la misma carpeta.
