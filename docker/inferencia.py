@@ -1,9 +1,8 @@
 import pandas as pd
 import numpy as np
 import keras
+
 def infer(data_path):
-
-
     try:
         # Leemos el modelo
         modelo_nn = keras.models.load_model("./models/modelo_nn.h5")
@@ -75,14 +74,15 @@ def infer(data_path):
         #Hacemos la prediccion
         y_pred_nn = modelo_nn.predict(data)
         y_pred_nn = np.where(y_pred_nn >= 0.5, 1, 0)
-        result = pd.DataFrame()
-        result['llueve'] = y_pred_nn
-        result['llueve'] = result['llueve'].map({1:'Yes'  , 0: 'No'})
+        
+        #Creamos el dataframe con los resultados
+        result = pd.DataFrame({'llueve': y_pred_nn.flatten()})
+        result['llueve'] = result['llueve'].map({1: 'Yes', 0: 'No'})
 
-        result.to_csv("./predicciones.csv", index=False)
+        result.to_csv("/output/predicciones.csv", index=False)
         print("Predicciones guardadas en predicciones.csv")
     except Exception as e:
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    infer("./weather_docker.csv")
+    infer("/output/weather_docker.csv")
